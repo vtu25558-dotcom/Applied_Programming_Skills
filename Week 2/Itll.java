@@ -1,0 +1,17 @@
+class Itll {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) return null;
+        
+        ListNode pA = headA;
+        ListNode pB = headB;
+        
+        // Traverse both lists
+        while (pA != pB) {
+            pA = (pA != null) ? pA.next : headB;
+            pB = (pB != null) ? pB.next : headA;
+        }
+        
+        // Either intersection node or null
+        return pA;
+    }
+}
